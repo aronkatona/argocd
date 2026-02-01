@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: nginx
+          env:
+            - name: CLIENT_NAME
+              value: "client-b"
+            - name: APP_MODE
+              value: "production"
