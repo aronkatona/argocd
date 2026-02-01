@@ -6,7 +6,10 @@ namespace: client-a
 resources:
   - ../../base
 
-patchesStrategicMerge:
-  - env-patch.yaml
-
 nameSuffix: -client-a
+
+patches:
+  - target:
+      kind: Deployment
+      name: nginx
+    path: env-patch.yaml
